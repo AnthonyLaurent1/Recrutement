@@ -4,12 +4,11 @@
     <h1 class="text-center">Liste des produits</h1>
 
    {# TODO : Modifier le lien vers les nouveaux produits ici #}
-    <a href="#">
-        <button class="btn btn-primary"><a href="{{ path('new_product') }}">
+        <button class="btn btn-primary">
+            <a href="{{ path('new_product') }}">
                 Ajouter un produit
             </a>
         </button>
-    </a>
 
     <table class="table table-light table-hover table-striped mt-5">
         <thead>
@@ -41,14 +40,11 @@
                         {% endif %}
                     </th>
                 {# TODO: Insérer liens vers l'edition sur le mot éditer #}
-                    <button class="btn btn-primary"><a href="{{ path('edit_product', {id: product.id }) }}">
-                            Editer un produit
-                        </a>
-                    </button>
                 {# TODO: Insérer liens vers l'edition sur le mot supprimer #}
                     <th scope="col">
                         <a href="{{ path('edit_product', {id: product.id }) }}">Editer</a>
-                        / Supprimer
+                        /
+                        <a href="{{ path('delete_product', {id: product.id }) }}">Supprimer</a>
                     </th>
                 </tr>
             {% else %}
